@@ -132,8 +132,8 @@ function getGasRatio() { return; }
  * @apiSuccess (Response) {int64}    available_ram        RAM available, in byte
  * @apiSuccess (Response) {int64}    used_ram             The amount of RAM sold, in byte
  * @apiSuccess (Response) {int64}    total_ram            The system's total RAM count, in byte
- * @apiSuccess (Response) {double}   buy_price            The buying price of RAM, in IOST/byte
- * @apiSuccess (Response) {double}   sell_price           The selling price of RAM, in IOST/byte
+ * @apiSuccess (Response) {double}   buy_price            The buying price of RAM, in byte
+ * @apiSuccess (Response) {double}   sell_price           The selling price of RAM, in byte
  */
 function getRAMInfo() { return; }
 
