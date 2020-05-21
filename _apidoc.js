@@ -285,7 +285,7 @@ function getBlockByHash() { return; }
 
 
 /**
- * @api {get} getBlockByNumber /getBlockByNumber/{number}/{complete}
+ * @api {get} getBlockByNumber /getBlockByNumber/{number}
  * @apiVersion 0.1.2
  * @apiName getBlockByNumber
  * @apiGroup API
@@ -327,7 +327,7 @@ function getBlockByNumber() { return; }
 
 
 /**
- * @api {get} getAccount /getAccount/{address}/{by_longest_chain}
+ * @api {get} getAccount /getAccount/{address}
  * @apiVersion 0.1.2
  * @apiName getAccount
  * @apiGroup API
@@ -371,7 +371,7 @@ function getAccount() { return; }
 
 
 /**
- * @api {get} getTokenBalance /getTokenBalance/{address}/{token}/{by_longest_chain}
+ * @api {get} getTokenBalance /getTokenBalance/{address}/{token}
  * @apiVersion 0.1.2
  * @apiName getTokenBalance
  * @apiGroup API
@@ -398,7 +398,7 @@ function getTokenBalance() { return; }
 
 
 /**
- * @api {get} getProducerVoteInfo /getProducerVoteInfo/{address}/{by_longest_chain}
+ * @api {get} getProducerVoteInfo /getProducerVoteInfo/{address}
  * @apiVersion 0.1.2
  * @apiName GetProducerVoteInfo
  * @apiGroup API
@@ -423,7 +423,7 @@ function GetProducerVoteInfo() { return; }
 
 
 /**
- * @api {get} getContract /getContract/{id}/{by_longest_chain}
+ * @api {get} getContract /getContract/{id}
  * @apiVersion 0.1.2
  * @apiName getContract
  * @apiGroup API
@@ -635,7 +635,7 @@ function subscribe() { return; }
 
 
 /**
- * @api {get} getCandidateBonus /getCandidateBonus/{address}/{by_longest_chain}
+ * @api {get} getCandidateBonus /getCandidateBonus/{address}
  * @apiVersion 0.1.2
  * @apiName getCandidateBonus
  * @apiGroup API
@@ -655,7 +655,7 @@ function subscribe() { return; }
 function getCandidateBonus() { return; }
 
 /**
- * @api {get} getTokenInfo /getTokenInfo/{symbol}/{by_longest_chain}
+ * @api {get} getTokenInfo /getTokenInfo/{symbol}
  * @apiVersion 0.1.2
  * @apiName getTokenInfo
  * @apiGroup API

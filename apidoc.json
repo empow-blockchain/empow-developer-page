@@ -1,15 +1,16 @@
 {
-    "name": "Empow Blockchain",
+    "name": "",
     "version": "0.1.2",
-    "description": "Empow - Decentralized, Visually Focused Social Network",
-    "title": "Empow Developer Page",
+    "description": "",
+    "title": "Empow Docs",
     "url": "https://node.empow.io/",
     "header": {
-        "title": "RUN FULL NODE",
+        "title": "Run full node",
         "filename": "install_full_node.md"
     },
     "order": [
-        "getNodeInfo"
+        "getNodeInfo",
+        "getChainInfo"
     ],
     "template": {
         "withCompare": true,
