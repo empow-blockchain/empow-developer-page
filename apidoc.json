@@ -1,0 +1,22 @@
+{
+    "name": "empow-blockchain-api",
+    "version": "0.1.2",
+    "description": "Empow Blockchain API",
+    "title": "Empow Blockchain API",
+    "url": "https://node.empow.io/",
+    "header": {
+        "title": "My own header title",
+        "filename": "header.md"
+    },
+    "footer": {
+        "title": "My own footer title",
+        "filename": "footer.md"
+    },
+    "order": [
+        "getNodeInfo"
+    ],
+    "template": {
+        "withCompare": true,
+        "withGenerator": true
+    }
+}
