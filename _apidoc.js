@@ -234,7 +234,7 @@ function getTxByHash() { return; }
 }
  * @apiSuccess (Response) {string}                tx_hash              hash of the transaction
  * @apiSuccess (Response) {double}                gas_usage            GAS consumption of the transaction
- * @apiSuccess (Response) {map<string, int64>}    ram_usage            RAM consumption for the transaction. map-key is account name, and value is RAM amount
+ * @apiSuccess (Response) {map}    ram_usage            RAM consumption for the transaction. map-key is account name, and value is RAM amount
  * @apiSuccess (Response) {enum}                  status_code          Status of the transaction. SUCCESS; GAS_RUN_OUT - insufficient GAS; BALANCE_NOT_ENOUGH - insufficient balance; WRONG_PARAMETER; RUNTIME_ERROR - a run-time error; TIMEOUT; WRONG_TX_FORMAT; DUPLICCATE_SET_CODE - set code is duplicated unexpectedly; UNKNOWN_ERROR
  * @apiSuccess (Response) {string}                message              a message descripting status_code
  * @apiSuccess (Response) {array}                 returns              return values for each Action
@@ -398,7 +398,7 @@ function getTokenBalance() { return; }
 
 
 /**
- * @api {get} GetProducerVoteInfo /GetProducerVoteInfo/{address}/{by_longest_chain}
+ * @api {get} getProducerVoteInfo /getProducerVoteInfo/{address}/{by_longest_chain}
  * @apiVersion 0.1.2
  * @apiName GetProducerVoteInfo
  * @apiGroup API
@@ -603,61 +603,6 @@ Users may use the hash as an argument of the getTxByHash API or the getTxReceipt
  */
 function sendTx() { return; }
 
-
-
-/**
- * @api {post} execTx /execTx
- * @apiVersion 0.1.2
- * @apiName execTx
- * @apiGroup API
- *
- * @apiDescription Send the transaction to the node, and execute immediately. This will not seek consensus on the chain, nor will this transaction persist.
-
-This API is used to check whether a testing contract executes as expected. Obviously, execTx cannot guarantee the same behaviour with an on-chain execution due to different time to call.
- * 
- * @apiParam {int64} time Time of the transaction generation, in nanoseconds, from UnixEpoch-zero.
- * @apiParam {int64} expiration The time when the transaction expires, in nanoseconds since UnixEpoch-zero. If a block-producing node receives the transaction after expiration, it will not execute the transaction.
- * @apiParam {double} gas_ratio GAS ratio. This transaction will be executed with default ratio, multiplied by this parameter. The higher the ratio, the faster the transaction gets executed. The value can be reasonably between 1.0 to 100.0
- * @apiParam {double} gas_limit Maximum GAS allowed by this transaction. Should not be lower than 50,000
- * @apiParam {int64} delay The nanoseconds of the transaction delay. Set to 0 for non-delayed transactions.
- * @apiParam {uint32} chain_id chain_id
- * @apiParam {object} actions Specific calls of the transaction
- * @apiParam {object} amount_limit Limits on token of the transaction. More than one token limits may be specified; if the transaction exceeds theses limits, execution will halt.
- * @apiParam {string} publisher ID of the transaction publisher
- * @apiParam {object} publisher_sigs Signatures of the publisher, as described here. The publisher may provide multiple signatures for different permissions. Refer to documentations on the permission system.
- * @apiParam {object} signers The IDs of signers other than the publisher. May be left empty.
- * @apiParam {object} signatures Signatures of the signers. Each signers should have one or many signatures, so the length of the signatures should not be less than that of the signers.
- *
- * @apiSuccessExample {json} Example:
- *     
-{
-    "tx_hash": "DahCMUFPwvH5kcDeqJFi9JZb8X7fKiAaUs2ronqQkUqk",
-    "gas_usage": 11846,
-    "ram_usage": {},
-    "status_code": "SUCCESS",
-    "message": "",
-    "returns": [
-        "[]"
-    ],
-    "receipts": [
-        {
-            "func_name": "token.empow/transfer",
-            "content": "[\"em\",\"EM2ZsHwjT3AFVf3u4ZD29iUd727oPN6KWdzzpjP8NE1qAwTbX\",\"EM2ZsEiwxX2GaZML1Tt7q1d3Z37V3dCtrDQ5S5gRKQHk9irqc\",\"50\",\"Sponsor Reward: +50 EM - EM2ZsMcCwUUP2GP6uVEdLTDPGcjHdFgbRAvSFCDwUcknV6YkT\"]"
-        }
-    ]
-}
- * @apiSuccess (Response) {string}                tx_hash              hash of the transaction
- * @apiSuccess (Response) {double}                gas_usage            GAS consumption of the transaction
- * @apiSuccess (Response) {map<string, int64>}    ram_usage            RAM consumption for the transaction. map-key is account name, and value is RAM amount
- * @apiSuccess (Response) {enum}                  status_code          Status of the transaction. SUCCESS; GAS_RUN_OUT - insufficient GAS; BALANCE_NOT_ENOUGH - insufficient balance; WRONG_PARAMETER; RUNTIME_ERROR - a run-time error; TIMEOUT; WRONG_TX_FORMAT; DUPLICCATE_SET_CODE - set code is duplicated unexpectedly; UNKNOWN_ERROR
- * @apiSuccess (Response) {string}                message              a message descripting status_code
- * @apiSuccess (Response) {array}                 returns              return values for each Action
- * @apiSuccess (Response) {array}                 receipts             for event functions
- */
-function execTx() { return; }
-
-
-
 /**
  * @api {post} subscribe /subscribe
  * @apiVersion 0.1.2
@@ -708,31 +653,6 @@ function subscribe() { return; }
  * @apiSuccess (Response) {double}             bonus              the bonus he can receive
  */
 function getCandidateBonus() { return; }
-
-
-
-
-/**
- * @api {get} getVoterBonus /getVoterBonus/{address}/{by_longest_chain}
- * @apiVersion 0.1.2
- * @apiName getVoterBonus
- * @apiGroup API
- *
- * @apiDescription  Query the voting bonus a voter can receive.
- * 
- * @apiParam {string}       address                       node account address
- * @apiParam {bool}         by_longest_chain              true - get data from the longest chain; false - get data from irreversible blocks
- *
- * @apiSuccessExample {json} Example:
- *     
-{
-    "bonus": 0
-}
- * @apiSuccess (Response) {double}             bonus              the bonus he can receive
- */
-function getVoterBonus() { return; }
-
-
 
 /**
  * @api {get} getTokenInfo /getTokenInfo/{symbol}/{by_longest_chain}

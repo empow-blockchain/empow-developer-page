@@ -1,16 +1,12 @@
 {
-    "name": "empow-blockchain-api",
+    "name": "Empow Blockchain",
     "version": "0.1.2",
-    "description": "Empow Blockchain API",
-    "title": "Empow Blockchain API",
+    "description": "Empow - Decentralized, Visually Focused Social Network",
+    "title": "Empow Developer Page",
     "url": "https://node.empow.io/",
     "header": {
-        "title": "My own header title",
-        "filename": "header.md"
-    },
-    "footer": {
-        "title": "My own footer title",
-        "filename": "footer.md"
+        "title": "RUN FULL NODE",
+        "filename": "install_full_node.md"
     },
     "order": [
         "getNodeInfo"
