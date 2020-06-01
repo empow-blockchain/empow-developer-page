@@ -21,6 +21,8 @@ td.code {
 
 #content {
   padding-top: 16px;
+  margin-left: 370px;
+  width: calc(100% - 370px);
 }
 
 td p {
@@ -272,6 +274,7 @@ pre code.sample-request-response-json {
 
   -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  width: 350px;
 }
 
 .sidenav:hover {
@@ -983,4 +986,14 @@ pre .typ-options {
   font-size: 23px;
   cursor: pointer;
   color: #878787;
+}
+
+#api-_footer {
+  max-width: 900px;
+}
+
+#api-_footer table td,
+#api-_footer table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
 }

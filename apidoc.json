@@ -8,6 +8,10 @@
         "title": "Run full node",
         "filename": "install_full_node.md"
     },
+    "footer": {
+        "title": "Signing a transaction",
+        "filename": "signing_a_transaction.md"
+    },
     "order": [
         "getNodeInfo",
         "getChainInfo"
